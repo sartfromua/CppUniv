@@ -33,8 +33,29 @@ void printMatrix(Matrix matr) {
 }
 
 
+Matrix sumOfMatrix(Matrix m1, Matrix m2) {
+    Matrix res;
+    if (m1.n != m2.n || m1.m != m2.m) {
+        printf("Matrix can't be summed!");
+        return res;
+    }
+    res.m = m1.m;
+    res.n = m1.n;
+    for (int i=0; i<m1.n; i++) {
+        for (int j=0; j<m1.m; j++) {
+            res.values[i][j] = m1.values[i][j] + m2.values[i][j];
+        }
+    }
+}
+
+
 int main() {
-    Matrix M1;
-    M1 = inputMatrix();
-    printMatrix(M1);
+    Matrix m1, m2;
+    m1 = inputMatrix();
+    m2 = inputMatrix();
+    printMatrix(m1);
+    printMatrix(m2);
+    Matrix m_sum;
+    m_sum = sumOfMatrix(m1, m2);
+    printMatrix(m_sum);
 }
