@@ -46,6 +46,7 @@ Matrix sumOfMatrix(Matrix m1, Matrix m2) {
             res.values[i][j] = m1.values[i][j] + m2.values[i][j];
         }
     }
+    return res;
 }
 
 
